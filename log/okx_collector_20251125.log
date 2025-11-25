@@ -1,0 +1,239 @@
+2025-11-25 19:52:14,357 | INFO | okx_data.streams | 合约乘数初始化: 1.0
+2025-11-25 19:52:14,553 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/trades?instId=BTC-USDT-SWAP&limit=100 "HTTP/2 200 OK"
+2025-11-25 19:52:14,554 | INFO | okx_data.streams | 初始化成交状态: 已记录 100 笔历史成交，避免重复计算
+2025-11-25 19:52:14,819 | INFO | okx_data.streams | WebSocket采集启动: instId=BTC-USDT-SWAP, instType=SWAP, interval=0.25s, 合约乘数=1.0
+2025-11-25 19:52:14,819 | INFO | okx.websocket.WsPublicAsync | Connecting to WebSocket...
+2025-11-25 19:52:15,500 | INFO | okx.websocket.WebSocketFactory | WebSocket connection established.
+2025-11-25 19:52:15,501 | INFO | okx_data.streams | 已订阅 trades-all 频道: instId=BTC-USDT-SWAP
+2025-11-25 19:52:15,820 | INFO | okx_data.streams | WebSocket 连接已启动，已订阅 trades-all 频道
+2025-11-25 19:52:16,319 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:16,969 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:17,628 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:18,219 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:18,820 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:19,427 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:20,026 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:20,620 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:21,219 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:21,826 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:22,420 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:23,029 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:23,677 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:24,220 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:24,770 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:25,318 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:25,876 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:26,419 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:26,982 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:27,527 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:28,078 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:28,619 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:29,169 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:29,719 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:30,268 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:30,820 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:31,371 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:31,920 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:32,418 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:32,977 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:33,527 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:34,069 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:34,628 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:35,218 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:35,772 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:36,318 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:36,869 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:37,419 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:37,969 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:38,520 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:39,281 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:39,929 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:40,470 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:41,069 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:41,676 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:42,268 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:42,877 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:43,526 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:44,118 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:44,723 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:45,318 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:45,977 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:46,579 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:47,169 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:47,826 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:48,468 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:49,118 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:49,720 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:50,333 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:50,925 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:51,526 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:52,169 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:52,779 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:53,375 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:53,977 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:54,618 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:55,274 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:52:55,929 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:53:04,900 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:53:04,977 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:53:13,697 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:53:22,440 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:53:22,516 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:53:31,280 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:53:37,071 | INFO | okx_data.streams | WebSocket 连接已停止
+2025-11-25 19:56:53,753 | INFO | okx_data.streams | 合约乘数初始化: 1.0
+2025-11-25 19:56:54,150 | INFO | okx_data.streams | 合约乘数初始化: 1.0
+2025-11-25 19:56:54,358 | INFO | okx_data.streams | WebSocket采集启动: instId=BTC-USDT-SWAP, instType=SWAP, interval=0.25s, 合约乘数=1.0
+2025-11-25 19:56:54,358 | INFO | okx.websocket.WsPublicAsync | Connecting to WebSocket...
+2025-11-25 19:56:55,359 | INFO | okx_data.streams | WebSocket 连接已启动，已订阅 trades-all 频道
+2025-11-25 19:56:55,794 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:56:56,444 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:56:56,993 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:56:57,549 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:56:58,103 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:56:58,659 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:56:59,249 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:56:59,843 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:00,494 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:01,145 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:01,794 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:02,452 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:03,096 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:03,753 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:03,831 | INFO | okx.websocket.WebSocketFactory | WebSocket connection established.
+2025-11-25 19:57:03,831 | INFO | okx_data.streams | 已订阅 trades-all 频道: instId=BTC-USDT-SWAP
+2025-11-25 19:57:04,448 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:05,044 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:05,644 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:06,294 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:06,953 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:07,595 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:08,193 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:08,848 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:09,496 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:10,156 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:10,794 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:11,401 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:12,047 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:12,644 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:13,243 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:13,906 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:14,544 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:15,193 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:15,844 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:16,444 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:17,102 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:17,755 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:18,398 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:19,045 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:19,695 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:20,354 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:20,994 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:21,644 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:22,195 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:22,750 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:23,294 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:23,843 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:24,392 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:24,951 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:25,493 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:26,044 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:26,592 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:27,144 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:27,698 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:28,250 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:28,793 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:29,344 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:29,893 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:30,446 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:30,994 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:31,543 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:32,147 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:32,696 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:33,243 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:33,793 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:34,344 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:34,893 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:35,502 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:36,043 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:36,593 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:37,143 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:37,693 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:38,344 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:38,994 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:39,643 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:40,302 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:40,942 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:41,602 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:42,243 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:42,904 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:43,547 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:44,193 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:44,843 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:45,501 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:46,201 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:46,845 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:47,545 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:48,142 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:48,694 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:49,244 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:49,792 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:50,349 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:50,892 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:51,446 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:51,992 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:52,543 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:53,095 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:53,641 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:54,194 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:57:54,792 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 19:58:02,728 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:58:10,636 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:58:10,697 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:58:18,636 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:58:26,551 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:58:26,627 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:58:34,551 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:58:42,768 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:58:42,827 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:58:50,755 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:58:58,677 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:58:58,737 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:59:06,690 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:59:15,194 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:59:15,280 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:59:23,685 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:59:32,095 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:59:32,166 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:59:40,715 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:59:49,167 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 19:59:49,236 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 19:59:57,649 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 20:00:06,084 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 20:00:06,155 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 20:00:14,962 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 20:00:23,386 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 20:00:23,457 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 20:00:31,902 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 20:00:40,639 | ERROR | okx_data.streams | 获取合约乘数失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 20:00:40,722 | ERROR | okx_data.streams | 调用订单簿API异常: EOF occurred in violation of protocol (_ssl.c:1002)
+2025-11-25 20:00:49,189 | ERROR | okx_data.streams | 获取持仓量失败: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-11-25 20:00:51,063 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:51,564 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:52,063 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:52,568 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:53,061 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:53,561 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:54,067 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:54,561 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:55,012 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:55,512 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:56,010 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:56,660 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:57,210 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:57,760 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:58,309 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:58,861 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:59,411 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:00:59,960 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
+2025-11-25 20:01:00,509 | INFO | httpx | HTTP Request: GET https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=5 "HTTP/2 200 OK"
