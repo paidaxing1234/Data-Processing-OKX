@@ -66,13 +66,15 @@ class TradeAggregator:
         self.collector_lock = threading.Lock()
         self.ws_running = False
         self.ws_ready = threading.Event()  # WebSocket连接就绪事件
-        self.executor = ThreadPoolExecutor(max_workers=3, thread_name_prefix="okx_api")  # 用于并行API调用
+        
+        # 多线程执行器和API限流
+        self.executor = ThreadPoolExecutor(max_workers=3, thread_name_prefix="okx_api")
         self.last_api_call_time = 0.0
-        self.api_call_interval = 0.1  # API调用最小间隔100ms，避免过快
+        self.api_call_interval = 0.15  # API调用最小间隔150ms，避免过快导致SSL错误
 
     def run(self) -> None:
-        # 1. 首先获取合约乘数（只获取一次）
-        self._fetch_contract_multiplier_once()
+        # 1. 初始化：获取合约乘数（只获取一次）
+        self._initialize_contract_multiplier()
         logger.info(
             "WebSocket采集启动: instId=%s, instType=%s, interval=%ss, 合约乘数=%s",
             self.instrument_id,
@@ -102,7 +104,7 @@ class TradeAggregator:
             self._stop_websocket()
             self.executor.shutdown(wait=True)
 
-    def _fetch_contract_multiplier_once(self) -> None:
+    def _initialize_contract_multiplier(self) -> None:
         """初始化时只获取一次合约乘数"""
         multiplier = self._fetch_contract_multiplier_with_retry()
         if multiplier is not None:
@@ -112,11 +114,10 @@ class TradeAggregator:
             logger.warning("合约乘数获取失败，使用默认值1.0")
 
     def _collect_once(self) -> None:
-        """250ms周期聚合：汇总本周期内持续采集的成交数据"""
+        """250ms周期聚合：汇总本周期内持续采集的成交数据，并行获取订单簿、持仓量等"""
         local_now = datetime.now(timezone.utc).astimezone()
         current_date = local_now.date()
         self._check_day_rollover(current_date)
-        self._refresh_contract_multiplier()
 
         # 获取本周期内收集的所有新成交（已去重）
         with self.collector_lock:
@@ -137,9 +138,12 @@ class TradeAggregator:
         update_ts = int(local_now.timestamp() * 1000)
         local_cpu_ts = update_ts
 
-        book_data = self._fetch_orderbook()
+        # 并行获取订单簿和持仓量（同一时间点的数据）
+        book_data, open_interest = self._fetch_data_parallel()
+
         bids, asks = self._extract_orderbook_sides(book_data)
-        self.last_open_interest = self._fetch_open_interest()
+        if open_interest is not None:
+            self.last_open_interest = open_interest
 
         point = AggregatedPoint(
             instrument_id=self.instrument_id,
@@ -161,14 +165,12 @@ class TradeAggregator:
     def _start_websocket(self) -> None:
         """启动 WebSocket 连接并订阅 trades-all 频道"""
         self.ws_running = True
+        self.ws_ready.clear()
         self.ws_loop = asyncio.new_event_loop()
         self.ws_thread = threading.Thread(
             target=self._run_websocket_loop, daemon=True, args=(self.ws_loop,)
         )
         self.ws_thread.start()
-        # 等待 WebSocket 连接建立
-        time.sleep(1.0)
-        logger.info("WebSocket 连接已启动，已订阅 trades-all 频道")
 
     def _run_websocket_loop(self, loop: asyncio.AbstractEventLoop) -> None:
         """在新线程中运行 WebSocket 事件循环"""
@@ -189,6 +191,8 @@ class TradeAggregator:
             ]
             await self.ws.subscribe(params, self._on_websocket_message)
             logger.info("已订阅 trades-all 频道: instId=%s", self.instrument_id)
+            # 标记WebSocket已就绪
+            self.ws_ready.set()
             # 保持连接运行
             while self.ws_running:
                 await asyncio.sleep(1.0)
@@ -241,6 +245,7 @@ class TradeAggregator:
 
         # 更新最新成交价
         px = trade.get("px")
+        sz = trade.get("sz")
         if px is not None:
             try:
                 self.last_trade_price = float(px)
@@ -250,13 +255,9 @@ class TradeAggregator:
         # 加入当前周期队列
         with self.collector_lock:
             self.collected_trades.append(trade)
-        if logger.isEnabledFor(logging.DEBUG):
-            logger.debug(
-                "WS Trade captured: id=%s px=%s sz=%s",
-                trade_id,
-                trade.get("px"),
-                trade.get("sz"),
-            )
+        
+        # 打印成交数据（用于测试）
+        logger.info("WS Trade captured: id=%s, px=%s, sz=%s", trade_id, px, sz)
 
         # 清理过期的trade_id（保留最近10000个）
         if len(self.seen_trade_ids) > 10000:
@@ -272,16 +273,54 @@ class TradeAggregator:
             self.ws_thread.join(timeout=2.0)
         logger.info("WebSocket 连接已停止")
 
-    def _fetch_orderbook(self) -> Optional[Dict]:
-        try:
-            result = self.market_api.get_orderbook(self.instrument_id, sz="5")
-            if result.get("code") == "0" and result.get("data"):
-                return result["data"][0]
-            logger.warning("获取订单簿失败: %s", result.get("msg", "未知错误"))
-            return None
-        except Exception as exc:  # noqa: BLE001
-            logger.error("调用订单簿API异常: %s", exc)
-            return None
+    def _rate_limit(self) -> None:
+        """API调用限流：确保调用间隔，避免SSL错误"""
+        now = time.perf_counter()
+        elapsed = now - self.last_api_call_time
+        if elapsed < self.api_call_interval:
+            time.sleep(self.api_call_interval - elapsed)
+        self.last_api_call_time = time.perf_counter()
+
+    def _fetch_data_parallel(self) -> Tuple[Optional[Dict], Optional[float]]:
+        """并行获取订单簿和持仓量，确保同一时间点的数据"""
+        futures = {}
+        # 提交订单簿任务
+        futures['orderbook'] = self.executor.submit(self._fetch_orderbook_with_retry)
+        # 提交持仓量任务
+        futures['open_interest'] = self.executor.submit(self._fetch_open_interest_with_retry)
+        
+        # 等待所有任务完成
+        book_data = None
+        open_interest = None
+        for future in as_completed(futures.values()):
+            try:
+                result = future.result()
+                if 'orderbook' in [k for k, v in futures.items() if v == future]:
+                    book_data = result
+                elif 'open_interest' in [k for k, v in futures.items() if v == future]:
+                    open_interest = result
+            except Exception as exc:  # noqa: BLE001
+                logger.error("并行获取数据失败: %s", exc)
+        
+        return book_data, open_interest
+
+    def _fetch_orderbook_with_retry(self, max_retries: int = 3) -> Optional[Dict]:
+        """带重试的订单簿获取"""
+        self._rate_limit()
+        for attempt in range(max_retries):
+            try:
+                result = self.market_api.get_orderbook(self.instrument_id, sz="5")
+                if result.get("code") == "0" and result.get("data"):
+                    return result["data"][0]
+                if attempt < max_retries - 1:
+                    time.sleep(0.2 * (attempt + 1))
+            except Exception as exc:  # noqa: BLE001
+                if attempt < max_retries - 1:
+                    logger.warning("获取订单簿失败(重试 %d/%d): %s", attempt + 1, max_retries, exc)
+                    time.sleep(0.2 * (attempt + 1))
+                else:
+                    logger.error("获取订单簿最终失败: %s", exc)
+        return None
 
     def _extract_orderbook_sides(
         self, book_data: Optional[Dict]
@@ -321,44 +360,49 @@ class TradeAggregator:
 
         return bids, asks
 
-    def _fetch_open_interest(self) -> Optional[float]:
-        try:
-            response = self.public_api.get_open_interest(
-                instType=self.inst_type, instId=self.instrument_id
-            )
-            data = response.get("data") or []
-            if data:
-                return float(data[0].get("oi") or 0)
-        except Exception as exc:  # noqa: BLE001
-            logger.error("获取持仓量失败: %s", exc)
+    def _fetch_open_interest_with_retry(self, max_retries: int = 3) -> Optional[float]:
+        """带重试的持仓量获取"""
+        self._rate_limit()
+        for attempt in range(max_retries):
+            try:
+                response = self.public_api.get_open_interest(
+                    instType=self.inst_type, instId=self.instrument_id
+                )
+                data = response.get("data") or []
+                if data:
+                    return float(data[0].get("oi") or 0)
+                if attempt < max_retries - 1:
+                    time.sleep(0.2 * (attempt + 1))
+            except Exception as exc:  # noqa: BLE001
+                if attempt < max_retries - 1:
+                    logger.warning("获取持仓量失败(重试 %d/%d): %s", attempt + 1, max_retries, exc)
+                    time.sleep(0.2 * (attempt + 1))
+                else:
+                    logger.error("获取持仓量最终失败: %s", exc)
         return self.last_open_interest
 
-    def _refresh_contract_multiplier(self, initial: bool = False) -> None:
-        multiplier = self._fetch_contract_multiplier()
-        if multiplier is None:
-            return
-        changed = abs(multiplier - self.contract_multiplier) > 1e-12
-        if initial or changed:
-            self.contract_multiplier = multiplier
-            logger.info(
-                "合约乘数%s: %s",
-                "初始化" if initial else "更新",
-                self.contract_multiplier,
-            )
-
-    def _fetch_contract_multiplier(self) -> Optional[float]:
-        try:
-            response = self.public_api.get_instruments(
-                instType=self.inst_type, instId=self.instrument_id
-            )
-            data = response.get("data") or []
-            for item in data:
-                if item.get("instId") == self.instrument_id:
-                    value = item.get("ctMult")
-                    return float(value) if value not in (None, "") else None
-        except Exception as exc:  # noqa: BLE001
-            logger.error("获取合约乘数失败: %s", exc)
+    def _fetch_contract_multiplier_with_retry(self, max_retries: int = 3) -> Optional[float]:
+        """带重试的合约乘数获取"""
+        for attempt in range(max_retries):
+            try:
+                response = self.public_api.get_instruments(
+                    instType=self.inst_type, instId=self.instrument_id
+                )
+                data = response.get("data") or []
+                for item in data:
+                    if item.get("instId") == self.instrument_id:
+                        value = item.get("ctMult")
+                        return float(value) if value not in (None, "") else None
+                if attempt < max_retries - 1:
+                    time.sleep(0.2 * (attempt + 1))
+            except Exception as exc:  # noqa: BLE001
+                if attempt < max_retries - 1:
+                    logger.warning("获取合约乘数失败(重试 %d/%d): %s", attempt + 1, max_retries, exc)
+                    time.sleep(0.2 * (attempt + 1))
+                else:
+                    logger.error("获取合约乘数最终失败: %s", exc)
         return None
+
 
 
     def _check_day_rollover(self, today: date) -> None:
