@@ -38,6 +38,19 @@ def parse_args() -> argparse.Namespace:
         default=str(settings.OUTPUT_DIR),
         help="CSV输出目录，默认项目output文件夹",
     )
+    parser.add_argument(
+        "--proxy",
+        "-p",
+        action="store_true",
+        help="是否使用代理（默认读取配置文件）",
+    )
+    parser.add_argument(
+        "--proxy-url",
+        "-pu",
+        type=str,
+        default=None,
+        help="代理地址（未指定则使用配置文件，格式如: socks5h://127.0.0.1:7890）",
+    )
     return parser.parse_args()
 
 
@@ -83,12 +96,19 @@ def configure_logging() -> None:
 def main() -> None:
     configure_logging()
     args = parse_args()
+    
+    # 确定代理设置
+    use_proxy = args.proxy if args.proxy else settings.PROXY_CONFIG.get("enabled", False)
+    proxy_url = args.proxy_url or settings.PROXY_CONFIG.get("http") or settings.PROXY_CONFIG.get("https")
+    
     writer = CsvWriter(output_dir=Path(args.output), instrument_id=args.inst_id)
     aggregator = TradeAggregator(
         instrument_id=args.inst_id,
         inst_type=args.inst_type,
         sample_interval=args.interval,
         storage=writer,
+        use_proxy=use_proxy,
+        proxy_url=proxy_url,
     )
     aggregator.run()
 
